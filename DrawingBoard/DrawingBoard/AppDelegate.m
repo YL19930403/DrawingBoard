@@ -15,8 +15,12 @@
 @implementation AppDelegate
 
 
+#pragma mark  -  自定义Bugtags功能
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    BugtagsOptions *options = [[BugtagsOptions alloc] init];
+    options.trackingCrashes = YES;
+    [Bugtags startWithAppKey:@"98454aa72a0023fae7aa11572db46455" invocationEvent:BTGInvocationEventBubble options:options];
     return YES;
 }
 
